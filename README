@@ -1,0 +1,15 @@
+# Usage
+
+git clone git://github.com/cyx/lua-setup.git
+cd lua-setup; source install.sh
+
+# Prerequisites
+
+gcc / make
+
+# What gets installed?
+
+1. lua
+2. lsocket
+3. cmsgpack
+4. pac
