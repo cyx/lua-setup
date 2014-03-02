@@ -52,8 +52,9 @@ sudo -k
 (cd /tmp;
   curl -O https://gist.githubusercontent.com/cyx/f7e37007e0c5063ea636/raw/67c47bafdfc4728a1e1a0a2ca9be5bfee2107841/pac-ls ;
   curl -O https://gist.githubusercontent.com/cyx/f7e37007e0c5063ea636/raw/4981aa4bc2b4e074dd80d0b59b405ff4de82dd53/pac-show ;
+  curl -O https://gist.githubusercontent.com/frodsan/9308807/raw/3e92799048082fa8d2b46b27e80e9a78f30cfec8/pac-add ;
 
-  sudo install pac-{ls,show} /usr/local/bin
+  sudo install pac-{ls,show,add} /usr/local/bin
 )
 
 # -- cleanup
