@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# set -e
+set -e
 
 ## -- be a good citizen and let the user know about sudo
 echo "This script requires superuser access to install software."
