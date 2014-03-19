@@ -33,7 +33,6 @@ sudo -k
   rm -rf lua-cmsgpack ;
   git clone git://github.com/antirez/lua-cmsgpack.git ;
   cd lua-cmsgpack ;
-  git pull --no-edit git://github.com/fperrad/lua-cmsgpack.git compat52 ;
 
   gcc -O2 -fPIC -I../lua-5.2.3/src -c lua_cmsgpack.c -o lua_cmsgpack.o ;
   gcc -shared -o cmsgpack.so lua_cmsgpack.o ;
