@@ -37,6 +37,28 @@ sudo -k
     sudo mv md5.so /usr/local/lib/lua/5.2)
 )
 
+## -- base64
+(cd /tmp;
+  curl -O http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lbase64.tar.gz ;
+  tar zxvf lbase64.tar.gz ;
+
+  (cd base64 && make G=-fPIC LUA=../lua-5.2.3 &&
+    sudo mkdir -p /usr/local/lib/lua/5.2 &&
+    sudo mv base64.so /usr/local/lib/lua/5.2)
+)
+
+## -- luuid
+sudo apt-get install uuid-dev
+
+(cd /tmp;
+  curl -O http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/luuid.tar.gz ;
+  tar zxvf luuid.tar.gz ;
+
+  (cd uuid && make G=-fPIC LUA=../lua-5.2.3 &&
+    sudo mkdir -p /usr/local/lib/lua/5.2 &&
+    sudo mv uuid.so /usr/local/lib/lua/5.2)
+)
+
 ## -- lua-cmsgpack
 
 (cd /tmp;
