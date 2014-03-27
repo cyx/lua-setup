@@ -1,3 +1,10 @@
-local msgpack = require('cmsgpack')
+require("lsocket")
+require("cmsgpack")
+require("md5")
+require("sha1")
+require("sha256")
+require("sha512")
+require("base64")
+require("uuid")
 
-print(msgpack.unpack(msgpack.pack({ hello = 'there' })))
+print("All tests passed.")
