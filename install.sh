@@ -32,9 +32,9 @@ sudo -k
   curl -O http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lmd5.tar.gz ;
   tar zxvf lmd5.tar.gz ;
 
-  (cd md5 && make G=-fPIC LUA=../lua-5.2.3 &&
+  (cd md5 && make G=-fPIC LUA=../lua-5.2.3 md4 md5 sha1 sha224 sha256 sha384 sha512 ripemd160 &&
     sudo mkdir -p /usr/local/lib/lua/5.2 &&
-    sudo mv md5.so /usr/local/lib/lua/5.2)
+    sudo mv md4.so md5.so sha1.so sha224.so sha256.so sha384.so sha512.so ripemd160.so /usr/local/lib/lua/5.2)
 )
 
 ## -- base64
