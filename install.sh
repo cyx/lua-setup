@@ -27,13 +27,44 @@ sudo -k
     sudo mv lsocket.so /usr/local/lib/lua/5.2)
 )
 
+## -- md5
+(cd /tmp ;
+  curl -O http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lmd5.tar.gz ;
+  tar zxvf lmd5.tar.gz ;
+
+  (cd md5 && make G=-fPIC LUA=../lua-5.2.3 md4 md5 sha1 sha224 sha256 sha384 sha512 ripemd160 &&
+    sudo mkdir -p /usr/local/lib/lua/5.2 &&
+    sudo mv md4.so md5.so sha1.so sha224.so sha256.so sha384.so sha512.so ripemd160.so /usr/local/lib/lua/5.2)
+)
+
+## -- base64
+(cd /tmp;
+  curl -O http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lbase64.tar.gz ;
+  tar zxvf lbase64.tar.gz ;
+
+  (cd base64 && make G=-fPIC LUA=../lua-5.2.3 &&
+    sudo mkdir -p /usr/local/lib/lua/5.2 &&
+    sudo mv base64.so /usr/local/lib/lua/5.2)
+)
+
+## -- luuid
+sudo apt-get install uuid-dev
+
+(cd /tmp;
+  curl -O http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/luuid.tar.gz ;
+  tar zxvf luuid.tar.gz ;
+
+  (cd uuid && make G=-fPIC LUA=../lua-5.2.3 &&
+    sudo mkdir -p /usr/local/lib/lua/5.2 &&
+    sudo mv uuid.so /usr/local/lib/lua/5.2)
+)
+
 ## -- lua-cmsgpack
 
 (cd /tmp;
   rm -rf lua-cmsgpack ;
   git clone git://github.com/antirez/lua-cmsgpack.git ;
   cd lua-cmsgpack ;
-  git pull --no-edit git://github.com/puppi/lua-cmsgpack.git improvements
 
   gcc -O2 -fPIC -I../lua-5.2.3/src -c lua_cmsgpack.c -o lua_cmsgpack.o ;
   gcc -shared -o cmsgpack.so lua_cmsgpack.o ;
