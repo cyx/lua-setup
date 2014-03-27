@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+# set -e
 
 ## -- be a good citizen and let the user know about sudo
 echo "This script requires superuser access to install software."
@@ -33,6 +33,7 @@ sudo -k
   rm -rf lua-cmsgpack ;
   git clone git://github.com/antirez/lua-cmsgpack.git ;
   cd lua-cmsgpack ;
+  git pull --no-edit git://github.com/puppi/lua-cmsgpack.git improvements
 
   gcc -O2 -fPIC -I../lua-5.2.3/src -c lua_cmsgpack.c -o lua_cmsgpack.o ;
   gcc -shared -o cmsgpack.so lua_cmsgpack.o ;

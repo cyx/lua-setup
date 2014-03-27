@@ -5,7 +5,8 @@ cd lua-setup; source install.sh
 
 # Prerequisites
 
-gcc / make
+    sudo apt-get install build-essential curl libreadline6-dev \
+            libcurl4-openssl-dev uuid-dev
 
 # What gets installed?
 
@@ -13,3 +14,6 @@ gcc / make
 2. lsocket
 3. cmsgpack
 4. pac
+5. md5 / sha1 / etc
+6. base64
+7. uuid
