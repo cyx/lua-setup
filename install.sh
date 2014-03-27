@@ -27,6 +27,16 @@ sudo -k
     sudo mv lsocket.so /usr/local/lib/lua/5.2)
 )
 
+## -- md5
+(cd /tmp ;
+  curl -O http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/5.2/lmd5.tar.gz ;
+  tar zxvf lmd5.tar.gz ;
+
+  (cd md5 && make G=-fPIC LUA=../lua-5.2.3 &&
+    sudo mkdir -p /usr/local/lib/lua/5.2 &&
+    sudo mv md5.so /usr/local/lib/lua/5.2)
+)
+
 ## -- lua-cmsgpack
 
 (cd /tmp;
